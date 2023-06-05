@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Click for Bears</title>
+  <style>
+    #clickText {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-size: 48px;
+      font-weight: bold;
+    }
+
+    #bear {
+      display: none;
+      position: absolute;
+    }
+  </style>
+</head>
+<body onclick="showBear(event)">
+  <div id="clickText">
+    <span>Click for Bears</span>
+  </div>
+  
+  <script>
+    function showBear(event) {
+      var clickText = document.getElementById("clickText");
+      clickText.style.display = "none";
+      
+      var bear = document.getElementById("bear");
+      bear.style.display = "block";
+      bear.style.left = event.clientX + "px";
+      bear.style.top = event.clientY + "px";
+    }
+  </script>
+  
+  <img id="bear" src="https://example.com/bear.png" alt="Bear">
+</body>
+</html>
